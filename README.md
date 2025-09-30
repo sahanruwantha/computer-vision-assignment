@@ -14,7 +14,7 @@ Experience the AI Emotion Detection System in action! We've prepared demonstrati
 ### 🧠 CNN Model Demo
 **File:** `cnn.mp4` (29MB)
 
-https://github.com/sahanruwantha/computer-vision-assignment/assets/cnn.mp4
+https://github.com/sahanruwantha/computer-vision-assignment/cnn.mp4
 
 The Convolutional Neural Network model demonstration showcases:
 - High-accuracy emotion detection in real-time
@@ -25,7 +25,7 @@ The Convolutional Neural Network model demonstration showcases:
 ### 🔄 DNN Model Demo  
 **File:** `dnn.mp4` (40MB)
 
-https://github.com/sahanruwantha/computer-vision-assignment/assets/dnn.mp4
+https://github.com/sahanruwantha/computer-vision-assignment/dnn.mp4
 
 The Deep Neural Network model demonstration highlights:
 - Fast inference and lightweight processing
