@@ -12,7 +12,7 @@ A comprehensive real-time emotion detection application using deep learning mode
 Experience the AI Emotion Detection System in action! We've prepared demonstration videos showcasing both model architectures:
 
 ### 🧠 CNN Model Demo
-**File:** `cnn.mkv`
+**File:** `cnn.mp4`
 
 The Convolutional Neural Network model demonstration showcases:
 - High-accuracy emotion detection in real-time
@@ -21,7 +21,7 @@ The Convolutional Neural Network model demonstration showcases:
 - Smooth real-time processing with minimal latency
 
 ### 🔄 DNN Model Demo  
-**File:** `dnn.mkv`
+**File:** `dnn.mp4`
 
 The Deep Neural Network model demonstration highlights:
 - Fast inference and lightweight processing
@@ -312,14 +312,3 @@ To train your own models:
 - **TensorFlow/Keras** for deep learning framework
 - **Hugging Face** for pre-trained transformer models
 - **tkinter** for GUI framework
-
-## 📞 Support
-
-For support and questions:
-- 📧 Create an issue in the repository
-- 📖 Check the documentation and troubleshooting section
-- 🔍 Review existing issues for similar problems
-
----
-
-Made with ❤️ using Python, TensorFlow, and OpenCV
