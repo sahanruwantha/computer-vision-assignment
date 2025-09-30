@@ -3,9 +3,6 @@ import cv2
 import numpy as np
 import os
 
-os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
-
 import tensorflow as tf
 from tensorflow.keras.models import load_model
 import time

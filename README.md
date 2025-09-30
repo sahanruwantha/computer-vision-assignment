@@ -1,6 +1,6 @@
 # 🎭 AI Emotion Detection System
 
-A comprehensive real-time emotion detection application using deep learning models with both CNN and DNN architectures. Features a modern GUI interface built with tkinter and supports multiple model backends including Hugging Face transformers.
+A real-time emotion detection application using deep learning models with both CNN and DNN architectures. Features live webcam emotion detection with an enhanced OpenCV interface.
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.20+-orange.svg)
@@ -38,230 +38,148 @@ The Deep Neural Network model demonstration highlights:
 ## 🌟 Features
 
 - **Real-time emotion detection** from webcam feed
-- **Multiple model support**: CNN, DNN, and Hugging Face transformers
-- **Beautiful modern GUI** with dark theme
-- **7 emotion categories**: Happy, Sad, Angry, Surprise, Fear, Disgust, Neutral
-- **Live statistics** and performance metrics
+- **Multiple model support**: CNN and DNN architectures
+- **Enhanced OpenCV interface** with fullscreen support
+- **2 emotion categories**: Happy and Sad
+- **Live statistics** including FPS and face count
 - **Screenshot functionality** to save detection results
-- **Model switching** without restarting the application
-- **Camera selection** support for multiple cameras
+- **Fullscreen toggle** for immersive experience
+- **Performance monitoring** with real-time FPS display
 
 ## 📋 Requirements
 
 - Python 3.10 or higher
 - Webcam/Camera
-- CUDA-capable GPU (optional, CPU fallback available)
+- TensorFlow/Keras
+- OpenCV
+- NumPy
 
 ## 🚀 Quick Start
 
-### Option 1: Using uv (Recommended)
+### Installation
 
 ```bash
 # Clone or download the project
-cd computer-vision
+cd computer-vision-assignment
 
-# Install uv if you haven't already
-curl -LsSf https://astral.sh/uv/install.sh | sh
+# Install dependencies with uv
+uv add tensorflow opencv-python numpy
 
-# Install dependencies
-uv sync
-
-# Run the GUI application
-uv run python emotion_gui.py
-
-# Or run the command-line version
+# Run the application
 uv run python main.py
 ```
 
-### Option 2: Using pip
-
-```bash
-# Clone or download the project
-cd computer-vision
-
-# Create virtual environment (recommended)
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run the GUI application
-python emotion_gui.py
-
-# Or run the command-line version
-python main.py
-```
-
-## 📦 Installation
-
-### Dependencies
+## 📦 Dependencies
 
 The project requires the following main dependencies:
 
-- **OpenCV** (`opencv-python>=4.12.0`) - Computer vision and camera handling
-- **TensorFlow** (`tensorflow>=2.20.0`) - Deep learning framework
-- **Pillow** (`pillow>=10.0.0`) - Image processing
-- **NumPy** (`numpy>=1.24.0`) - Numerical computations
-- **Transformers** (`transformers>=4.56.2`) - Hugging Face models (optional)
-- **PyTorch** (`torch>=2.8.0`) - Alternative deep learning framework
-- **tkinter** - GUI framework (usually included with Python)
+- **OpenCV** (`opencv-python`) - Computer vision and camera handling
+- **TensorFlow** (`tensorflow`) - Deep learning framework
+- **NumPy** (`numpy`) - Numerical computations
 
 ### Model Files
 
 The application expects the following pre-trained models:
 - `emotion_cnn_model.h5` - Convolutional Neural Network model
 - `emotion_dnn_model.h5` - Deep Neural Network model
-- `facial_recognition_model.keras` - Face detection model (optional)
 
-If models are not present, you can train them using `train.py` script.
+If models are not present, you can train them using the `train.ipynb` notebook.
 
 ## 🎯 Usage
-
-### GUI Application
-
-1. **Launch the application:**
-   ```bash
-   python emotion_gui.py
-   ```
-
-2. **Select a model** from the dropdown (CNN or DNN)
-
-3. **Set camera index** (usually 0 for default camera)
-
-4. **Click "Start Detection"** to begin real-time emotion detection
-
-5. **Use controls:**
-   - 🚀 **Start Detection** - Begin emotion detection
-   - ⏹️ **Stop Detection** - Stop the detection process
-   - 📷 **Screenshot** - Save current frame with detections
 
 ### Command Line Interface
 
 ```bash
-# Basic usage with default CNN model
-python main.py
+# Use CNN model (default)
+uv run python main.py
+uv run python main.py --cnn
 
 # Use DNN model
-python main.py --model dnn
-
-# Use Hugging Face model (requires transformers)
-python main.py --model huggingface
-
-# Specify custom model path
-python main.py --model-path /path/to/your/model.h5 --model-type cnn
-
-# Change camera index
-python main.py --camera 1
+uv run python main.py --dnn
 ```
+
+### Controls During Detection
+
+- **Q** - Quit the application
+- **S** - Save screenshot of current frame
+- **F** - Toggle fullscreen mode
 
 ### Command Line Arguments
 
-- `--model-path`: Path to the emotion detection model
-- `--model-type`: Model type ('cnn', 'dnn', or 'huggingface')
-- `--camera`: Camera index (default: 0)
-- `--confidence-threshold`: Minimum confidence for predictions (default: 0.5)
+- `--cnn`: Use CNN model for emotion detection
+- `--dnn`: Use DNN model for emotion detection
 
 ## 🏗️ Project Structure
 
 ```
-computer-vision/
+computer-vision-assignment/
 │
 ├── 📊 Models
 │   ├── emotion_cnn_model.h5         # Pre-trained CNN model
-│   ├── emotion_dnn_model.h5         # Pre-trained DNN model
-│   └── facial_recognition_model.keras # Face detection model
+│   └── emotion_dnn_model.h5         # Pre-trained DNN model
 │
-├── 🖥️ Applications
-│   ├── emotion_gui.py               # GUI application
-│   ├── main.py                      # CLI application & core logic
-│   └── main_huggingface.py          # Hugging Face integration
+├── 🖥️ Application
+│   └── main.py                      # Main application with CLI interface
 │
-├── 🔧 Training & Setup
-│   ├── train.py                     # Model training script
-│   ├── train_data.zip              # Training dataset
-│   └── train_data/                 # Extracted training data
-│       ├── happy/
-│       ├── sad/
-│       └── ...
+├── 🔧 Training
+│   └── train.ipynb                  # Model training notebook
 │
-├── 📝 Configuration
-│   ├── requirements.txt             # pip dependencies
-│   ├── requirements_hf.txt          # Hugging Face requirements
-│   ├── pyproject.toml              # Project configuration
-│   ├── uv.lock                     # uv lock file
-│   └── README.md                   # This file
+├── 🎬 Demo Videos
+│   ├── cnn.mp4                      # CNN model demonstration
+│   └── dnn.mp4                      # DNN model demonstration
 │
-└── 📋 Documentation
-    └── report.md                   # Project report
+└── � Documentation
+    └── README.md                    # This file
 ```
 
-## 🎨 GUI Features
+## 🎨 Interface Features
 
-### Main Interface
-- **Dark theme** with modern styling
-- **Real-time video feed** with emotion overlays
-- **Model information panel** with current model details
-- **Detection statistics** including FPS and face count
-- **Emotion color legend** for easy identification
+### Real-time Display
+- **Enhanced OpenCV interface** with dark overlays
+- **Real-time video feed** with emotion detection overlays
+- **Model information display** showing current model type
+- **Live statistics** including FPS and face count
+- **Emotion color coding** for easy identification
 
-### Controls
-- **Model Selection**: Switch between CNN and DNN models
-- **Camera Selection**: Choose camera source
-- **Start/Stop**: Control detection process
-- **Screenshot**: Save current frame with detections
+### Interactive Controls
+- **Fullscreen mode** for immersive experience
+- **Screenshot capture** to save detection results
+- **Real-time switching** between fullscreen and windowed mode
 
 ## 🧠 Model Information
 
 ### CNN Model
 - **Architecture**: Convolutional layers with pooling and dropout
-- **Input**: 48x48 grayscale images
-- **Output**: 7 emotion classes
+- **Input**: 128x128 RGB images
+- **Output**: 2 emotion classes (Happy/Sad)
 - **Performance**: Higher accuracy, more computationally intensive
 
 ### DNN Model
 - **Architecture**: Fully connected layers with dropout
-- **Input**: 48x48 flattened grayscale images
-- **Output**: 7 emotion classes
-- **Performance**: Faster inference, lower accuracy
-
-### Hugging Face Models
-- **Pre-trained transformers** for emotion detection
-- **Various architectures** available
-- **Easy to switch** between different models
+- **Input**: 128x128 RGB images (flattened)
+- **Output**: 2 emotion classes (Happy/Sad)
+- **Performance**: Faster inference, suitable for real-time applications
 
 ## 📊 Supported Emotions
 
-The system can detect the following 7 emotional states:
+The system can detect the following 2 emotional states:
 
-1. 😊 **Happy** (Green)
-2. 😢 **Sad** (Red)
-3. 😠 **Angry** (Blue)
-4. 😲 **Surprise** (Cyan)
-5. 😨 **Fear** (Purple)
-6. 🤢 **Disgust** (Dark Green)
-7. 😐 **Neutral** (Gray)
+1. 😊 **Happy** (Green) - Positive emotions and expressions
+2. 😢 **Sad** (Red) - Negative emotions and expressions
 
 ## 🔧 Training Custom Models
 
 To train your own models:
 
-1. **Prepare your dataset** in the following structure:
-   ```
-   train_data/
-   ├── happy/
-   ├── sad/
-   ├── angry/
-   ├── surprise/
-   ├── fear/
-   ├── disgust/
-   └── neutral/
+1. **Use the training notebook:**
+   ```bash
+   jupyter notebook train.ipynb
    ```
 
-2. **Run the training script:**
-   ```bash
-   python train.py
-   ```
+2. **Follow the notebook instructions** to:
+   - Prepare your dataset
+   - Configure model parameters
+   - Train both CNN and DNN models
 
 3. **Models will be saved as:**
    - `emotion_cnn_model.h5`
@@ -276,8 +194,8 @@ To train your own models:
 
 ### Memory Management
 - Efficient image preprocessing and memory cleanup
-- Background thread processing to maintain UI responsiveness
-- Automatic frame rate limiting to prevent resource overuse
+- Optimized face detection and emotion prediction pipeline
+- Automatic frame rate monitoring for performance analysis
 
 ## 🔍 Troubleshooting
 
@@ -285,34 +203,33 @@ To train your own models:
 
 1. **Camera not detected:**
    - Check camera permissions
-   - Try different camera indices (0, 1, 2, etc.)
    - Ensure no other applications are using the camera
+   - Camera index 0 is used by default
 
 2. **Model loading errors:**
-   - Verify model files exist in the project directory
+   - Verify model files (`emotion_cnn_model.h5` and `emotion_dnn_model.h5`) exist in the project directory
    - Check TensorFlow/Keras compatibility
-   - Try reinstalling dependencies
+   - Try reinstalling dependencies: `uv add tensorflow opencv-python numpy`
 
 3. **Low performance:**
-   - Reduce video resolution
-   - Lower frame rate in detection loop
    - Use DNN model instead of CNN for faster processing
+   - Close other resource-intensive applications
+   - Ensure adequate lighting for better face detection
 
-4. **GUI issues:**
-   - Ensure tkinter is properly installed
-   - Check display settings and resolution
-   - Try running in different Python environments
+4. **Display issues:**
+   - Press 'F' to toggle fullscreen mode
+   - Press 'Q' to quit if the application becomes unresponsive
+   - Check display resolution compatibility
 
 ### Error Messages
 
-- **"Model file not found"**: Download or train the required model files
+- **"Model file not found"**: Download or train the required model files using `train.ipynb`
 - **"Cannot open camera"**: Check camera connection and permissions
-- **"ImportError"**: Install missing dependencies with pip or uv
+- **"ImportError"**: Install missing dependencies with `uv add tensorflow opencv-python numpy`
 
 ## 🙏 Acknowledgments
 
-- **FER2013 Dataset** for emotion recognition training data
 - **OpenCV** for computer vision capabilities
 - **TensorFlow/Keras** for deep learning framework
-- **Hugging Face** for pre-trained transformer models
-- **tkinter** for GUI framework
+- **Face detection datasets** for training data
+- **Emotion recognition research** community
