@@ -33,7 +33,7 @@ The Deep Neural Network model demonstration highlights:
 - Real-time performance optimization
 - Comparative analysis with CNN model results
 
-> **📹 Video Access:** You can download and view the demo videos directly from the repository files above, or click the video links once the repository is pushed to GitHub. The videos demonstrate the complete workflow from face detection to emotion classification using the modern GUI interface.
+> **📹 Video Access:** You can download and view the demo videos directly from the repository files above, The videos demonstrate the complete workflow from face detection to emotion classification using the modern GUI interface.
 
 ## 🌟 Features
 
