@@ -12,7 +12,9 @@ A comprehensive real-time emotion detection application using deep learning mode
 Experience the AI Emotion Detection System in action! We've prepared demonstration videos showcasing both model architectures:
 
 ### 🧠 CNN Model Demo
-**File:** `cnn.mp4`
+**File:** `cnn.mp4` (29MB)
+
+https://github.com/sahanruwantha/computer-vision-assignment/assets/cnn.mp4
 
 The Convolutional Neural Network model demonstration showcases:
 - High-accuracy emotion detection in real-time
@@ -21,7 +23,9 @@ The Convolutional Neural Network model demonstration showcases:
 - Smooth real-time processing with minimal latency
 
 ### 🔄 DNN Model Demo  
-**File:** `dnn.mp4`
+**File:** `dnn.mp4` (40MB)
+
+https://github.com/sahanruwantha/computer-vision-assignment/assets/dnn.mp4
 
 The Deep Neural Network model demonstration highlights:
 - Fast inference and lightweight processing
@@ -29,7 +33,7 @@ The Deep Neural Network model demonstration highlights:
 - Real-time performance optimization
 - Comparative analysis with CNN model results
 
-> **Note:** Both demo videos are included in the project directory and demonstrate the complete workflow from face detection to emotion classification using the modern GUI interface.
+> **📹 Video Access:** You can download and view the demo videos directly from the repository files above, or click the video links once the repository is pushed to GitHub. The videos demonstrate the complete workflow from face detection to emotion classification using the modern GUI interface.
 
 ## 🌟 Features
 
